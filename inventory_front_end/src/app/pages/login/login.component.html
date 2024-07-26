@@ -1,0 +1,29 @@
+<div class="login-box">
+    <h2>Login Form</h2>
+    <form title="Login" >
+      <div class="user-box">
+        <input type="text" name="username" required [(ngModel)]="loginObj.username">
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="password" name="password" required [(ngModel)]="loginObj.password">
+        <label>Password</label>
+      </div>
+      <a (click)="loginClick()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </a>
+      <p>Don't have an account?</p>
+      <a href="signup">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Register
+      </a>
+    </form>
+  </div>
+  

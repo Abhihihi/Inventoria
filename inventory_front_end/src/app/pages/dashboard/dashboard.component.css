@@ -1,0 +1,50 @@
+h1 {
+  color: aliceblue;
+}
+
+p {
+  color: #e86af1;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.dashboard {
+  width: 100%;
+  background-image: url(../../../../public/image.webp );
+  padding: 20px;
+  font-size: large;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+}
+label {
+  color: aliceblue;
+}
+
+.stat {
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+  margin: 10px;
+}
+
+.products table {
+  width: 100%;
+  border-collapse: collapse;
+  color: aliceblue;
+}
+
+.products th,
+.products td {
+  width: fixed;
+  border: 1px solid #dfff88;
+  padding: 4px;
+  font-size: large;
+  margin-left: 15px;
+}
+
+tr:hover{  background-color:coral; text-transform: uppercase; }

@@ -1,0 +1,72 @@
+<div class="dashboard">
+  <h1>Inventory Dashboard</h1>
+  <div class="stats">
+    <div class="stat">
+      <h2>Total Products</h2>
+      <p>{{ totalProducts }}</p>
+    </div>
+    <div class="stat">
+      <h2>Out of Stock</h2>
+      <p>{{ outOfStock }}</p>
+    </div>
+    <div class="stat">
+      <h2>Low Stock</h2>
+      <p>{{ lowStock }}</p>
+    </div>
+  </div>
+  <div class="products">
+    <h1>Product List</h1>
+    <table>
+      <thead>
+        <tr style="text-align: center; background-color: cyan; color: #000;">
+          <th>Name</th>
+          <th>Stock</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.name }}</td>
+          <td>{{ product.stock }}</td>
+          <td>{{ product.price }}</td>
+          <td style="text-align: center;">
+            <button class="btn btn-primary" (click)="selectProduct(product)" style="margin-right: 40px;">Edit</button>
+            <button *ngIf="product.id !== undefined" (click)="deleteProduct(product.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="add-product" *ngIf="!selectedProduct">
+    <h1>Add Product</h1>
+    <form (ngSubmit)="addProduct()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="newProduct.name" name="name" required>
+      
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" [(ngModel)]="newProduct.stock" name="stock" required>
+      
+      <label for="price">Price:</label>
+      <input type="number" step="0.01" id="price" [(ngModel)]="newProduct.price" name="price" required>
+      
+      <button type="submit">Add Product</button>
+    </form>
+  </div>
+  <div class="edit-product" *ngIf="selectedProduct">
+    <h1>Edit Product</h1>
+    <form (ngSubmit)="updateProduct()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="selectedProduct.name" name="name" required>
+      
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" [(ngModel)]="selectedProduct.stock" name="stock" required>
+      
+      <label for="price">Price:</label>
+      <input type="number" step="0.01" id="price" [(ngModel)]="selectedProduct.price" name="price" required>
+      
+      <button type="submit">Update Product</button>
+      <button type="button" (click)="clearSelection()">Cancel</button>
+    </form>
+  </div>
+</div>

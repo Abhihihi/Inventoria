@@ -1,0 +1,32 @@
+    <div class="login-box">
+    <h2>Registeration form</h2>
+    <form>
+        <div class="user-box">
+            <input type="text" name="username" required [(ngModel)]="signupObj.username">
+            <label>Username</label>
+        </div>
+        <div class="user-box">
+            <input type="email" name="email" required [(ngModel)]="signupObj.email">
+            <label>Email</label>
+        </div>
+        <div class="user-box">
+            <input type="password" name="password" required [(ngModel)]="signupObj.password">
+            <label>Password</label>
+        </div>
+        <a (click)="signupClick()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+        </a>
+        <p>Already have an account?</p>
+        <a href="login">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Login
+        </a>
+    </form>
+</div>
